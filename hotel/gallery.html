@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+  <style>
+
+  nav {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    padding: 1% 3%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+}
+
+nav img {
+    width: 150px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+
+.logo h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 23px;
+}
+
+.logo span {
+    font-size: 11px;
+    color: #ccc;
+}
+
+.nav-links ul li a:hover {
+    color: #e5aa32;
+}
+
+#home-btn a {
+    color: #b8860b;
+}
+
+.nav-links button {
+    padding: 10px 2rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #b8860b;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-links button:hover {
+    background-color: #e5aa32;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    background: #f7f5f0;
+}
+h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 5rem;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+    margin-top: 3rem;
+    font-size: 3rem;
+}
+h2 span{
+  color: #b8860b;
+
+}
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111c1c;
+    color: #fff;
+    padding-top: 70px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    max-height: 1000px;
+    margin: auto;
+    padding: 0 1% 50px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-brand p {
+    color: #999;
+    font-size: 13px;
+    margin-top: 20px;
+    max-width: 250px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    display: block;
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #d4a72c;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #444;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+}
+
+
+
+
+
+</style>
+<body>
+
+
+
+   <nav>
+
+            <div class="logo">
+                <div>
+                    <h2>TIMELESS</h2>
+                    <span>SUITES & RESORT</span>
+                </div>
+            </div>
+
+            <div class="nav-links">
+
+                <ul>
+
+                    <li>
+                        <a href="./file.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#suite">Suite</a>
+                    </li>
+
+                    <li id="home-btn">
+                        <a href="#gallery">Gallery</a>
+                    </li>
+
+                    <li>
+                        <a href="#reviews">Reviews</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                    <li>
+                        <a href="#booking">
+                            <button type="button">Book Now</button>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+   <!-- ================= GALLERY ================= -->
+    <section class="gallery section" id="gallery">
+
+        <div class="section-heading">
+
+            <p class="section-label">OUR GALLERY</p>
+
+            <h2>
+                A Glimpse of
+                <span><br>Timeless</span>
+            </h2>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <img
+                src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&auto=format&fit=crop&q=80"
+                alt="Hotel"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop&q=80"
+                alt="Hotel room"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&auto=format&fit=crop&q=80"
+                alt="Swimming pool"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80"
+                alt="Restaurant"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop&q=80"
+                alt="Luxury bedroom"
+            >
+
+            <img
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80"
+                alt="Hotel exterior"
+            >
+
+        </div>
+
+    </section>
+
+     <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+
+                    <span class="logo-icon">✦</span>
+
+                    <div>
+                        <h2>TIMELESS</h2>
+                        <span>SUITES & RESORT</span>
+                    </div>
+
+                </a>
+
+                <p>
+                    Luxury, comfort and unforgettable hospitality.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="#about">About</a>
+                <a href="#suite">Suites</a>
+                <a href="#dining">Dining</a>
+                <a href="#spa">Spa</a>
+                <a href="#events">Events</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Explore</h3>
+
+                <a href="#gallery">Gallery</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+                <a href="#booking">Book Now</a>
+
+            </div>
+
+
+            <div class="footer-social">
+
+                <h3>Follow Us</h3>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+      
+
+    </footer>
+
+</body>
+</html>

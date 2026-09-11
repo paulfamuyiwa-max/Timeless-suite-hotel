@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+
+
+nav {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    padding: 1% 3%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+}
+
+nav img {
+    width: 150px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+
+.logo h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 23px;
+}
+
+.logo span {
+    font-size: 11px;
+    color: #ccc;
+}
+
+.nav-links ul li a:hover {
+    color: #e5aa32;
+}
+
+#home-btn a {
+    color: #b8860b;
+}
+
+.nav-links button {
+    padding: 10px 2rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #b8860b;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-links button:hover {
+    background-color: #e5aa32;
+    transform: translateY(-2px);
+}
+/* =========================
+   ROOM DETAIL SECTIONS
+========================= */
+
+.room-detail {
+  margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+    background: #F5F1E8;
+    gap: 10px;
+}
+
+
+.room-detail.reverse {
+    direction: rtl;
+}
+
+.room-detail.reverse .room-detail-content {
+    direction: ltr;
+}
+
+/* Room Images */
+
+.room-detail-image {
+    min-height: 600px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Replace these images with your own hotel images */
+
+.deluxe-image {
+    background-image: url("https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80");
+}
+
+.executive-image {
+    background-image: url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80");
+}
+
+.presidential-image {
+    background-image: url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80");
+}
+
+/* Room Label */
+
+.room-label {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: #C99A2E;
+    color: white;
+    padding: 10px 18px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Content */
+
+.room-detail-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px 10%;
+}
+
+.room-subtitle {
+    color: #C99A2E;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.room-detail-content h2 {
+    color: #182525;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    margin: 15px 0 20px;
+}
+
+.room-detail-content h2 span {
+    color: #C99A2E;
+}
+
+.room-detail-content p {
+    color: #555;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+/* Room Features */
+
+.room-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.room-info span {
+    color: #182525;
+    font-size: 14px;
+}
+
+.room-info i {
+    color: #C99A2E;
+    margin-right: 8px;
+}
+
+/* Price */
+
+.room-price {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.room-price strong {
+    color: #182525;
+    font-family: Georgia, serif;
+    font-size: 28px;
+}
+
+/* Button */
+
+.room-book-btn {
+    display: inline-block;
+    width: fit-content;
+    background: #102C2C;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    transition: 0.3s ease;
+}
+
+.room-book-btn i {
+    margin-left: 8px;
+}
+
+.room-book-btn:hover {
+    background: #C99A2E;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .room-detail,
+    .room-detail.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+
+    .room-detail-image {
+        min-height: 400px;
+    }
+
+    .room-detail-content {
+        padding: 55px 8%;
+    }
+
+    .room-detail-content h2 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .room-info {
+        grid-template-columns: 1fr;
+    }
+
+    .room-detail-image {
+        min-height: 320px;
+    }
+}
+
+
+</style>
+<body>
+
+   <nav>
+
+            <div class="logo">
+                <div>
+                    <h2>TIMELESS</h2>
+                    <span>SUITES & RESORT</span>
+                </div>
+            </div>
+
+            <div class="nav-links">
+
+                <ul>
+
+                    <li >
+                        <a href="./file.html">Home</a>
+                    </li>
+
+                    <li id="home-btn">
+                        <a href="#">Suite</a>
+                    </li>
+
+                    <li>
+                        <a href="./gallery.html">Gallery</a>
+                    </li>
+
+                    <li>
+                        <a href="./reviews.html">Reviews</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                    <li>
+                        <a href="#booking">
+                            <button type="button">Book Now</button>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+
+<!-- =========================
+     ROOM DETAILS
+========================= -->
+
+<!-- Deluxe Room -->
+<section class="room-detail" id="deluxe-room">
+    <div class="room-detail-image deluxe-image">
+        <div class="room-label">POPULAR</div>
+    </div>
+
+    <div class="room-detail-content">
+        <span class="room-subtitle">DELUXE ROOM</span>
+        <h2>Comfort Meets <span>Luxury</span></h2>
+
+        <p>
+            Relax in our beautifully designed Deluxe Room, created for guests
+            who appreciate comfort, elegance and a peaceful atmosphere.
+        </p>
+
+        <div class="room-info">
+            <span><i class="fa-solid fa-user"></i> 2 Guests</span>
+            <span><i class="fa-solid fa-bed"></i> King Bed</span>
+            <span><i class="fa-solid fa-wifi"></i> Free Wi-Fi</span>
+            <span><i class="fa-solid fa-tv"></i> Smart TV</span>
+        </div>
+
+        <div class="room-price">
+            <strong>₦85,000</strong> / night
+        </div>
+
+        <a href="#booking" class="room-book-btn">
+            BOOK THIS ROOM <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+
+<!-- Executive Suite -->
+<section class="room-detail reverse" id="executive-suite">
+    <div class="room-detail-image executive-image">
+        <div class="room-label">LUXURY</div>
+    </div>
+
+    <div class="room-detail-content">
+        <span class="room-subtitle">EXECUTIVE SUITE</span>
+        <h2>Your Private <span>Retreat</span></h2>
+
+        <p>
+            Enjoy a spacious Executive Suite with elegant interiors,
+            premium amenities and everything you need for a truly relaxing stay.
+        </p>
+
+        <div class="room-info">
+            <span><i class="fa-solid fa-user-group"></i> 3 Guests</span>
+            <span><i class="fa-solid fa-bed"></i> King Bed</span>
+            <span><i class="fa-solid fa-wifi"></i> Free Wi-Fi</span>
+            <span><i class="fa-solid fa-mug-hot"></i> Mini Bar</span>
+        </div>
+
+        <div class="room-price">
+            <strong>₦120,000</strong> / night
+        </div>
+
+        <a href="#booking" class="room-book-btn">
+            BOOK THIS ROOM <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+
+<!-- Presidential Suite -->
+<section class="room-detail" id="presidential-suite">
+    <div class="room-detail-image presidential-image">
+        <div class="room-label">PREMIUM</div>
+    </div>
+
+    <div class="room-detail-content">
+        <span class="room-subtitle">PRESIDENTIAL SUITE</span>
+        <h2>The Ultimate <span>Experience</span></h2>
+
+        <p>
+            Experience the finest level of hospitality in our Presidential
+            Suite, featuring generous space, sophisticated design and premium
+            amenities for an unforgettable stay.
+        </p>
+
+        <div class="room-info">
+            <span><i class="fa-solid fa-user-group"></i> 4 Guests</span>
+            <span><i class="fa-solid fa-bed"></i> King Bed</span>
+            <span><i class="fa-solid fa-wifi"></i> Free Wi-Fi</span>
+            <span><i class="fa-solid fa-spa"></i> Premium Amenities</span>
+        </div>
+
+        <div class="room-price">
+            <strong>₦180,000</strong> / night
+        </div>
+
+        <a href="#booking" class="room-book-btn">
+            BOOK THIS ROOM <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+
+</body>
+</html>

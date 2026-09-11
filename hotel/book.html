@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+
+ nav {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    padding: 1% 3%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+}
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 20px 6%;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 6%;
+        top: 23px;
+        z-index: 10;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 5%;
+        width: 90%;
+        background: #222;
+        padding: 20px 0;
+        border: 1px solid #b8860b;
+        border-radius: 8px;
+        text-align: center;
+        z-index: 9;
+    }
+
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links ul li {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .nav-links ul li a {
+        display: block;
+        font-size: 14px;
+    }
+
+    .nav-links button {
+        margin-top: 5px;
+        padding: 10px 30px;
+    }
+}
+
+
+/* =========================
+   BOOKING MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .booking-page {
+        padding: 120px 5% 60px;
+    }
+
+    .booking-content h1 {
+        font-size: 42px;
+    }
+
+    .booking-content > p {
+        font-size: 14px;
+    }
+
+    .booking-card {
+        padding: 25px;
+    }
+
+    .booking-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .booking-benefits {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 500px) {
+
+    .logo h2 {
+        font-size: 19px;
+    }
+
+    .logo span {
+        font-size: 9px;
+    }
+
+    .hamburger {
+        font-size: 24px;
+        top: 22px;
+    }
+
+    .nav-links {
+        top: 70px;
+    }
+
+    .booking-page {
+        padding: 110px 5% 50px;
+    }
+
+    .booking-content h1 {
+        font-size: 34px;
+    }
+
+    .booking-card {
+        padding: 20px;
+    }
+
+    .booking-card h2 {
+        font-size: 25px;
+    }
+
+    .booking-field input,
+    .booking-field select,
+    .booking-field textarea {
+        padding: 12px;
+    }
+
+    .reserve-btn {
+        padding: 14px;
+    }
+}
+
+nav img {
+    width: 150px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+
+.logo h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 23px;
+}
+
+.logo span {
+    font-size: 11px;
+    color: #ccc;
+}
+
+.nav-links ul li a:hover {
+    color: #e5aa32;
+}
+
+#home-btn a {
+    color: #b8860b;
+}
+
+.nav-links button {
+    padding: 10px 2rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #b8860b;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-links button:hover {
+    background-color: #e5aa32;
+    transform: translateY(-2px);
+}
+  
+
+
+/* =================================
+   BOOKING PAGE
+================================= */
+
+
+
+/* =================================
+   BOOKING BACKGROUND
+================================= */
+
+.booking-page {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 160px 6% 80px;
+
+    box-sizing: border-box;
+
+    background:
+
+        linear-gradient(
+            rgba(3, 14, 27, .83),
+            rgba(3, 14, 27, .95)
+        ),
+
+        url("images/hotel-bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+}
+
+
+.booking-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+/* HEADING */
+
+.booking-label {
+
+    color: #e5aa32;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+}
+
+
+.booking-content h1 {
+
+    margin: 15px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    font-weight: 400;
+}
+
+
+.booking-content h1 strong {
+
+    color: #e5aa32;
+
+    font-weight: 400;
+}
+
+
+.booking-content > p {
+
+    max-width: 650px;
+
+    margin: 0 auto 40px;
+
+    color: #c2c7cc;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* =================================
+   BOOKING CARD
+================================= */
+
+.booking-card {
+
+    text-align: left;
+
+    padding: 35px;
+
+    background: rgba(10, 25, 39, .96);
+
+    border: 1px solid rgba(229,170,50,.65);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45);
+}
+
+
+.booking-card h2 {
+
+    margin: 0;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+}
+
+
+.booking-subtitle {
+
+    text-align: center;
+
+    color: #929ba4;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =================================
+   FORM
+================================= */
+
+.booking-form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.booking-field {
+
+    margin-bottom: 20px;
+}
+
+
+.booking-field label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #ddd;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.booking-field input,
+.booking-field select,
+.booking-field textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    border-radius: 7px;
+
+    border: 1px solid #344554;
+
+    background: #071522;
+
+    color: white;
+
+    outline: none;
+
+    font-family: inherit;
+
+    transition: .3s;
+}
+
+
+.booking-field textarea {
+
+    resize: vertical;
+}
+
+
+.booking-field input:focus,
+.booking-field select:focus,
+.booking-field textarea:focus {
+
+    border-color: #e5aa32;
+
+    box-shadow:
+        0 0 0 2px rgba(229,170,50,.08);
+}
+
+
+.booking-field input::placeholder,
+.booking-field textarea::placeholder {
+
+    color: #69747f;
+}
+
+
+/* =================================
+   RESERVE BUTTON
+================================= */
+
+.reserve-btn {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #dca02d;
+
+    color: #111;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.reserve-btn span {
+
+    margin-left: 15px;
+
+    font-size: 18px;
+}
+
+
+.reserve-btn:hover {
+
+    background: #f0b83e;
+
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   BENEFITS
+================================= */
+
+.booking-benefits {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 35px;
+
+    margin-top: 30px;
+
+    color: #b8c0c7;
+
+    font-size: 13px;
+}
+
+
+.booking-benefits span {
+
+    color: #e5aa32;
+
+    margin-right: 7px;
+
+    font-weight: bold;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.booking-footer {
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: #040d17;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 850px) {
+
+    .booking-header {
+
+        padding: 18px 5%;
+    }
+
+    .booking-header nav {
+
+        gap: 12px;
+    }
+
+    .booking-header nav a:not(.book-now) {
+
+        display: none;
+    }
+
+    .booking-page {
+
+        padding: 130px 5% 60px;
+    }
+
+    .booking-form-row {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .logo h2 {
+
+        font-size: 19px;
+    }
+
+    .logo-icon {
+
+        font-size: 30px;
+    }
+
+    .booking-card {
+
+        padding: 22px;
+    }
+
+    .booking-benefits {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+}
+
+
+
+
+</style>
+<body>
+    <nav>
+
+    <div class="logo">
+        <div>
+            <h2>TIMELESS</h2>
+            <span>SUITES & RESORT</span>
+        </div>
+    </div>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="navLinks">
+
+        <ul>
+
+            <li id="home-btn">
+                <a href="./file.html">Home</a>
+            </li>
+
+            <li>
+                <a href="#">Suite</a>
+            </li>
+
+            <li>
+                <a href="./gallery.html">Gallery</a>
+            </li>
+
+            <li>
+                <a href="./reviews.html">Reviews</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+            <li>
+                <a href="./file.html">
+                    <button type="button">Book Now</button>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+    <!-- ================= BOOKING HERO ================= -->
+
+    <main class="booking-page">
+
+        <div class="booking-page-overlay"></div>
+
+        <div class="booking-content">
+
+            <span class="booking-label">
+                RESERVE YOUR STAY
+            </span>
+
+            <h1>
+                Book Your
+                <strong>Timeless Escape</strong>
+            </h1>
+
+            <p>
+                Experience exceptional comfort, luxury and
+                unforgettable hospitality at Timeless Suites
+                & Resort.
+            </p>
+
+
+            <!-- ================= BOOKING FORM ================= -->
+
+            <div class="booking-card">
+
+                <h2>
+                    Make a Reservation
+                </h2>
+
+                <p class="booking-subtitle">
+                    Select your preferred dates and room.
+                </p>
+
+
+                <form>
+
+
+                    <!-- NAME -->
+
+                    <div class="booking-form-row">
+
+                        <div class="booking-field">
+
+                            <label>
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                placeholder="Enter your name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="booking-field">
+
+                            <label>
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- DATES -->
+
+                    <div class="booking-form-row">
+
+                        <div class="booking-field">
+
+                            <label>
+                                Check In
+                            </label>
+
+                            <input
+                                type="date"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="booking-field">
+
+                            <label>
+                                Check Out
+                            </label>
+
+                            <input
+                                type="date"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- GUESTS + ROOM -->
+
+                    <div class="booking-form-row">
+
+                        <div class="booking-field">
+
+                            <label>
+                                Number of Guests
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    1 Guest
+                                </option>
+
+                                <option>
+                                    2 Guests
+                                </option>
+
+                                <option>
+                                    3 Guests
+                                </option>
+
+                                <option>
+                                    4 Guests
+                                </option>
+
+                                <option>
+                                    5+ Guests
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="booking-field">
+
+                            <label>
+                                Room Type
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    Select Room
+                                </option>
+
+                                <option>
+                                    Deluxe Room
+                                </option>
+
+                                <option>
+                                    Executive Suite
+                                </option>
+
+                                <option>
+                                    Presidential Suite
+                                </option>
+
+                                <option>
+                                    Royal Suite
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SPECIAL REQUEST -->
+
+                    <div class="booking-field">
+
+                        <label>
+                            Special Requests
+                        </label>
+
+                        <textarea
+                            rows="4"
+                            placeholder="Any special requests?">
+                        </textarea>
+
+                    </div>
+
+
+
+                    <!-- BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="reserve-btn">
+
+                        CHECK AVAILABILITY
+
+                        <span>→</span>
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+
+            <!-- BENEFITS -->
+
+            <div class="booking-benefits">
+
+                <div>
+                    <span>✓</span>
+                    Best Price Guarantee
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Free Wi-Fi
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    24/7 Support
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Secure Reservation
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="booking-footer">
+
+        <p>
+            © 2026 Timeless Suites & Resort.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    
+</body>
+</html>

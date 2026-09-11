@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<style>
+
+  nav {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    padding: 1% 3%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+}
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 20px 6%;
+        position: relative;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 6%;
+        top: 25px;
+        z-index: 10;
+    }
+    .nav-links ul li{
+        text-align: center;
+
+
+    }
+
+    /* Hide menu by default */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 5%;
+        width: 90%;
+        background: #222;
+        padding: 20px 0;
+        border-radius: 8px;
+        border: 1px solid #b8860b;
+        text-align: center;
+        z-index: 9;
+    }
+
+    /* Show menu when active */
+    .nav-links.active {
+        display: block;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links ul li {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .nav-links ul li a {
+        font-size: 14px;
+    }
+
+    .nav-links button {
+        margin-top: 5px;
+        padding: 10px 30px;
+    }
+
+
+    /* =========================
+       ABOUT MOBILE VIEW
+    ========================= */
+
+    .about {
+        padding: 70px 6%;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 350px;
+    }
+
+    .about-content {
+        width: 100%;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    /* =========================
+       FOOTER MOBILE VIEW
+    ========================= */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 0 8% 40px;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 500px) {
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .logo span {
+        font-size: 9px;
+    }
+
+    .hamburger {
+        font-size: 24px;
+        top: 23px;
+    }
+
+    .nav-links {
+        top: 70px;
+    }
+
+    .about {
+        padding: 60px 5%;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+    .about-content > p {
+        font-size: 14px;
+    }
+
+    .footer-container {
+        padding: 0 6% 35px;
+    }
+
+}
+
+nav img {
+    width: 150px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+
+.logo h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 23px;
+}
+
+.logo span {
+    font-size: 11px;
+    color: #ccc;
+}
+
+.nav-links ul li a:hover {
+    color: #e5aa32;
+}
+
+#home-btn a {
+    color: #b8860b;
+}
+
+.nav-links button {
+    padding: 10px 2rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #b8860b;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-links button:hover {
+    background-color: #e5aa32;
+    transform: translateY(-2px);
+}
+
+  /*about us section*/
+.about {
+    padding: 100px 8%;
+    background: #f8f6f1;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.section-subtitle {
+    color: #b08d57;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.about-content h2 {
+    font-size: 42px;
+    margin: 15px 0 20px;
+    color: #222;
+}
+
+.about-content > p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.about-features i {
+    color: #b08d57;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.about-features h4 {
+    margin: 5px 0;
+    color: #222;
+}
+
+.about-features p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.about-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background: #b08d57;
+}
+
+@media (max-width: 800px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-image img {
+        height: 400px;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 500px) {
+    .about {
+        padding: 70px 5%;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111c1c;
+    color: #fff;
+    padding-top: 70px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    max-height: 1000px;
+    margin: auto;
+    padding: 0 1% 50px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-brand p {
+    color: #999;
+    font-size: 13px;
+    margin-top: 20px;
+    max-width: 250px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    display: block;
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #d4a72c;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #444;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+}
+</style>
+<body>
+
+
+
+   <nav>
+
+    <div class="logo">
+        <div>
+            <h2>TIMELESS</h2>
+            <span>SUITES & RESORT</span>
+        </div>
+    </div>
+
+    <!-- Hamburger Button -->
+    <button class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="navLinks">
+        <ul>
+
+            <li id="home-btn">
+                <a href="./file.html">Home</a>
+            </li>
+
+            <li>
+                <a href="#">Suite</a>
+            </li>
+
+            <li>
+                <a href="./gallery.html">Gallery</a>
+            </li>
+
+            <li>
+                <a href="./reviews.html">Reviews</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+            <li>
+                <a href="#booking">
+                    <button type="button">Book Now</button>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+</nav>
+
+
+   <section class="about" id="about">
+    <div class="about-container">
+
+
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80"
+             alt="Timeless Suites & Resort">
+    </div>
+
+    <div class="about-content">
+        <span class="section-subtitle">ABOUT US</span>
+
+        <h2>Where Luxury Meets Comfort</h2>
+
+        <p>
+            Welcome to Timeless Suites & Resort, where exceptional
+            hospitality, elegant spaces, and unforgettable experiences
+            come together.
+        </p>
+
+        <p>
+            Whether you are visiting for business, relaxation, or a
+            special occasion, our dedicated team is committed to making
+            every moment of your stay comfortable and memorable.
+        </p>
+
+        <div class="about-features">
+            <div>
+                <i class="fa-solid fa-hotel"></i>
+                <h4>Luxury Suites</h4>
+                <p>Elegant rooms designed for your comfort.</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-concierge-bell"></i>
+                <h4>Exceptional Service</h4>
+                <p>Professional hospitality available when you need it.</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <h4>Perfect Location</h4>
+                <p>A convenient destination for business and leisure.</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-spa"></i>
+                <h4>Relax & Unwind</h4>
+                <p>Enjoy a peaceful atmosphere away from the ordinary.</p>
+            </div>
+        </div>
+
+        <a href="#" class="about-btn">Explore Our Suites</a>
+    </div>
+
+</div>
+
+</section>
+
+<footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+
+                    <span class="logo-icon">✦</span>
+
+                    <div>
+                        <h2>TIMELESS</h2>
+                        <span>SUITES & RESORT</span>
+                    </div>
+
+                </a>
+
+                <p>
+                    Luxury, comfort and unforgettable hospitality.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="#about">About</a>
+                <a href="#suite">Suites</a>
+                <a href="#dining">Dining</a>
+                <a href="#spa">Spa</a>
+                <a href="#events">Events</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Explore</h3>
+
+                <a href="#gallery">Gallery</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+                <a href="#booking">Book Now</a>
+
+            </div>
+
+
+            <div class="footer-social">
+
+                <h3>Follow Us</h3>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+      
+
+    </footer>
+
+
+    <script>
+
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburger.addEventListener("click", function () {
+
+        navLinks.classList.toggle("active");
+
+        if (navLinks.classList.contains("active")) {
+
+            hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+
+        } else {
+
+            hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
+        }
+
+    });
+
+
+    /* Close menu after clicking a link */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("active");
+
+            hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+    });
+
+</script>
+</body>
+</html>

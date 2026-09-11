@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<style>
+
+    nav {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    padding: 1% 3%;
+    justify-content: space-between;
+    align-items: center;
+   background: #182525;
+}
+
+nav img {
+    width: 150px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+
+.logo h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 23px;
+}
+
+.logo span {
+    font-size: 11px;
+    color: #ccc;
+}
+
+.nav-links ul li a:hover {
+    color: #e5aa32;
+}
+
+#home-btn a {
+    color: #b8860b;
+}
+
+.nav-links button {
+    padding: 10px 2rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #b8860b;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-links button:hover {
+    background-color: #e5aa32;
+    transform: translateY(-2px);
+}
+
+
+/* REVIEWS SECTION */
+
+.reviews {
+    padding: 100px 8%;
+    background: #102323;
+    color: white;
+    text-align: center;
+}
+
+.reviews-header p:first-child {
+    color: #c99a2e;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.reviews-header h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.reviews-header > span {
+    color: #c99a2e;
+    font-size: 25px;
+    letter-spacing: 4px;
+}
+
+.reviews-intro {
+    max-width: 600px;
+    margin: 20px auto 50px;
+    color: #d5d5d5;
+    line-height: 1.7;
+}
+
+/* REVIEW CARDS */
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.review-card {
+    background: white;
+    color: #333;
+    padding: 30px 25px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+}
+
+/* GUEST PHOTO */
+
+.review-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #c99a2e;
+    margin-bottom: 15px;
+}
+
+.review-card .stars {
+    color: #c99a2e;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.review-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.review-card h3 {
+    font-family: Georgia, serif;
+    color: #102323;
+    margin-bottom: 5px;
+}
+
+.review-card small {
+    color: #777;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .reviews-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .reviews {
+        padding: 70px 5%;
+    }
+
+    .reviews-header h2 {
+        font-size: 30px;
+    }
+
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111c1c;
+    color: #fff;
+    padding-top: 70px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    max-height: 1000px;
+    margin: auto;
+    padding: 0 1% 50px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-brand p {
+    color: #999;
+    font-size: 13px;
+    margin-top: 20px;
+    max-width: 250px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    display: block;
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #d4a72c;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #444;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+}
+</style>
+
+<body>
+
+  <nav>
+
+            <div class="logo">
+                <div>
+                    <h2>TIMELESS</h2>
+                    <span>SUITES & RESORT</span>
+                </div>
+            </div>
+
+            <div class="nav-links">
+
+                <ul>
+
+                    <li>
+                        <a href="./file.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#suite">Suite</a>
+                    </li>
+
+                    <li>
+                        <a href="./gallery.html">Gallery</a>
+                    </li>
+
+                    <li  id="home-btn">
+                        <a href="./file.html">Reviews</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                    <li>
+                        <a href="#booking">
+                            <button type="button">Book Now</button>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+
+
+<!-- REVIEWS SECTION -->
+<section class="reviews" id="reviews">
+
+    <div class="reviews-header">
+        <p>GUEST EXPERIENCES</p>
+        <h2>What Our Guests Say</h2>
+        <span>★★★★★</span>
+        <p class="reviews-intro">
+            Discover what our guests have to say about their experience
+            at Timeless Suites & Resort.
+        </p>
+    </div>
+
+    <div class="reviews-container">
+
+        <div class="review-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBob3RvfGVufDB8fDB8fHww"
+                 alt="David Johnson">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "The rooms were beautiful, clean, and extremely comfortable.
+                The staff made our stay feel truly special."
+            </p>
+
+            <h3>David Johnson</h3>
+            <small>Business Guest</small>
+        </div>
+
+
+        <div class="review-card">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBob3RvfGVufDB8fDB8fHww"
+                 alt="Sarah Williams">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "An amazing experience from start to finish. The service,
+                atmosphere, and food were exceptional."
+            </p>
+
+            <h3>Sarah Williams</h3>
+            <small>Holiday Guest</small>
+        </div>
+
+
+        <div class="review-card">
+            <img src="https://images.unsplash.com/photo-1529758146491-1e11fd721f77?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU2fHxwcm9maWxlfGVufDB8fDB8fHww"
+                 alt="Michael Brown">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "Timeless Suites exceeded my expectations. The perfect place
+                to relax and enjoy a luxurious stay."
+            </p>
+
+            <h3>Michael Brown</h3>
+            <small>Verified Guest</small>
+        </div>
+
+
+        <div class="review-card">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg"
+                 alt="Emily Davis">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "Wonderful hospitality and a beautiful environment. I would
+                definitely recommend Timeless Suites to anyone."
+            </p>
+
+            <h3>Emily Davis</h3>
+            <small>Verified Guest</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+
+                    <span class="logo-icon">✦</span>
+
+                    <div>
+                        <h2>TIMELESS</h2>
+                        <span>SUITES & RESORT</span>
+                    </div>
+
+                </a>
+
+                <p>
+                    Luxury, comfort and unforgettable hospitality.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="#about">About</a>
+                <a href="#suite">Suites</a>
+                <a href="#dining">Dining</a>
+                <a href="#spa">Spa</a>
+                <a href="#events">Events</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>Explore</h3>
+
+                <a href="#gallery">Gallery</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+                <a href="#booking">Book Now</a>
+
+            </div>
+
+
+            <div class="footer-social">
+
+                <h3>Follow Us</h3>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+      
+
+    </footer>
+
+</body>
+</html>
